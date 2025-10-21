@@ -83,6 +83,13 @@ function round_set() {
   document.getElementById("aka_team_output").innerHTML = aka_team;
   document.getElementById("ao_name_output").innerHTML = ao_name;
   document.getElementById("ao_team_output").innerHTML = ao_team;
+
+  // Hide video, show scoreboard
+  const scoreboard = document.getElementById('scoreboard');
+  const video = document.getElementById('videoContainer');
+  scoreboard.hidden = false;
+  video.hidden = true;
+
   SetClock();
 }
 
@@ -133,6 +140,14 @@ function clear_set() {
   // tombol START/PAUSE
   document.getElementById("startTime").style.display = "inline-block";
   document.getElementById("pauseTime").style.display = "none";
+
+  // Hide scoreboard, show video
+  const scoreboard = document.getElementById('scoreboard');
+  const video = document.getElementById('videoContainer');
+  const player = document.getElementById('player');
+  scoreboard.hidden = true;
+  video.hidden = false;
+  player.currentTime = 0;
 }
 
 

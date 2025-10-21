@@ -10,8 +10,17 @@
 </head>
 <body>
     <div class="d-flex justify-content-start">
+        <!-- Video -->
+         <div class="col-7 bgblack text-white" id="videoContainer">
+            <div class="video-wrap">
+                <video id="player" autoplay muted loop playsinline>
+                    <source src="assets/video.mp4" type="video/mp4">
+                </video>
+            </div>
+         </div>
+
         <!-- Display -->
-        <div class="col-7 bg-dark text-white">
+        <div class="col-7 bgblack text-white" id="scoreboard" hidden>
 
             <!-- Header -->
             <div class="position-relative text-center">
@@ -31,14 +40,14 @@
                         <h4 class="mb-0" id="ao_name_output">-</h4>
                         <h6 id="ao_team_output">-</h6>
                         <div class="d-flex my-0 align-items-center">
-                            <div class="p-1 flex-grow-1 hi-green text-center">
+                            <div class="p-1 flex-grow-1 green text-center">
                                 <div id="ao_win_output" style="display: none;">
                                     <h1 id="ao_blink">WIN</h1>
                                 </div>
                             </div>
-                            <div class="p-0 badge hi-bgblue" style="width: 160px; height: 160px; margin-bottom: 10px;">
+                            <div class="p-0 badge bgblue" style="width: 160px; height: 160px; margin-bottom: 10px;">
                                 <h1 class="display-1" style="font-family: 'Arial Black'; font-size: 8rem;" id="score_ao"></h1>
-                                <div class="col-12 text-center hi-bggreen" id="ao_senshu_output" style="display: none;font-size: 2rem;">SENSHU</div>
+                                <div class="col-12 text-center bggreen" id="ao_senshu_output" style="display: none;font-size: 2rem;">SENSHU</div>
                             </div>
                         </div>
                     </div>
@@ -53,11 +62,11 @@
                         <h4 class="me-3 mb-0" id="aka_name_output">-</h4>
                         <h6 class="me-3" id="aka_team_output">-</h6>
                         <div class="d-flex my-0 align-items-center">
-                            <div class="p-0 badge hi-bgred" style="width: 160px; height: 160px; margin-bottom: 10px;">
+                            <div class="p-0 badge bgred" style="width: 160px; height: 160px; margin-bottom: 10px;">
                                 <h1 class="display-1" style="font-family: 'Arial Black'; font-size: 8rem;" id="score_aka"></h1>
-                                <div class="col-12 text-center hi-bggreen" id="aka_senshu_output" style="display: none;font-size: 2rem;">SENSHU</div>
+                                <div class="col-12 text-center bggreen" id="aka_senshu_output" style="display: none;font-size: 2rem;">SENSHU</div>
                             </div>
-                            <div class="p-1 flex-grow-1 hi-green text-center" id="aka_win_output" style="display: none;">
+                            <div class="p-1 flex-grow-1 green text-center" id="aka_win_output" style="display: none;">
                                 <h1 id="aka_blink">WIN</h1>
                             </div>
                         </div>
@@ -73,19 +82,19 @@
                     <div class="col-5 position-relative my-4" style="height: 1rem;">
                         <!-- Pen 1 -->
                         <span class="badge outline-warning" id="ao_pen1_placeholder" style="width: 40px; height: 24px; display: inline-block; position: absolute; left: 150px;"></span>
-                        <span class="badge hi-bgyellow pen-slot" style="display: none; width: 40px; height: 24px; position: absolute; left: 150px;" id="ao_pen1_output"></span>
+                        <span class="badge bgyellow pen-slot" style="display: none; width: 40px; height: 24px; position: absolute; left: 150px;" id="ao_pen1_output"></span>
                         <!-- Pen 2 -->
                         <span class="badge outline-warning" id="ao_pen2_placeholder" style="width: 40px; height: 24px; display: inline-block; position: absolute; left: 200px;"></span>
-                        <span class="badge hi-bgyellow pen-slot" style="display: none; width: 40px; height: 24px; position: absolute; left: 200px;" id="ao_pen2_output"></span>
+                        <span class="badge bgyellow pen-slot" style="display: none; width: 40px; height: 24px; position: absolute; left: 200px;" id="ao_pen2_output"></span>
                         <!-- Pen 3 -->
                         <span class="badge outline-warning" id="ao_pen3_placeholder" style="width: 40px; height: 24px; display: inline-block; position: absolute; left: 250px;"></span>
-                        <span class="badge hi-bgyellow pen-slot" style="display: none; width: 40px; height: 24px; position: absolute; left: 250px;" id="ao_pen3_output"></span>
+                        <span class="badge bgyellow pen-slot" style="display: none; width: 40px; height: 24px; position: absolute; left: 250px;" id="ao_pen3_output"></span>
                         <!-- Pen 4 -->
                         <span class="badge outline-warning" id="ao_pen4_placeholder" style="width: 40px; height: 24px; display: inline-block; position: absolute; left: 300px;"></span>
-                        <span class="badge hi-bgyellow pen-slot" style="display: none; width: 40px; height: 24px; position: absolute; left: 300px;" id="ao_pen4_output"></span>
+                        <span class="badge bgyellow pen-slot" style="display: none; width: 40px; height: 24px; position: absolute; left: 300px;" id="ao_pen4_output"></span>
                         <!-- Pen 5 -->
                         <span class="badge outline-danger" id="ao_pen5_placeholder" style="width: 40px; height: 24px; display: inline-block; position: absolute; left: 350px;"></span>
-                        <span class="badge hi-bgred pen-slot" style="display: none; width: 40px; height: 24px; position: absolute; left: 350px;" id="ao_pen5_output"></span>
+                        <span class="badge bgred pen-slot" style="display: none; width: 40px; height: 24px; position: absolute; left: 350px;" id="ao_pen5_output"></span>
                     
                         <!-- Labels -->
                         <span style="position: absolute; top: 20px; left: 155px; font-size: 20px; font-weight: bold;">C1</span>
@@ -104,19 +113,19 @@
                     <div class="col-5 position-relative my-4" style="height: 2rem;"> 
                         <!-- Pen 1 -->
                         <span class="badge outline-warning" id="aka_pen1_placeholder" style="width: 40px; height: 24px; display: inline-block; position: absolute; right: 350px;"></span>
-                        <span class="badge hi-bgyellow pen-slot" style="display: none; width: 40px; height: 24px; position: absolute; right: 350px;" id="aka_pen1_output"></span>
+                        <span class="badge bgyellow pen-slot" style="display: none; width: 40px; height: 24px; position: absolute; right: 350px;" id="aka_pen1_output"></span>
                         <!-- Pen 2 -->
                         <span class="badge outline-warning" id="aka_pen2_placeholder" style="width: 40px; height: 24px; display: inline-block; position: absolute; right: 300px;"></span>
-                        <span class="badge hi-bgyellow pen-slot" style="display: none; width: 40px; height: 24px; position: absolute; right: 300px;" id="aka_pen2_output"></span>
+                        <span class="badge bgyellow pen-slot" style="display: none; width: 40px; height: 24px; position: absolute; right: 300px;" id="aka_pen2_output"></span>
                         <!-- Pen 3 -->
                         <span class="badge outline-warning" id="aka_pen3_placeholder" style="width: 40px; height: 24px; display: inline-block; position: absolute; right: 250px;"></span>
-                        <span class="badge hi-bgyellow pen-slot" style="display: none; width: 40px; height: 24px; position: absolute; right: 250px;" id="aka_pen3_output"></span>
+                        <span class="badge bgyellow pen-slot" style="display: none; width: 40px; height: 24px; position: absolute; right: 250px;" id="aka_pen3_output"></span>
                         <!-- Pen 4 -->
                         <span class="badge outline-warning" id="aka_pen4_placeholder" style="width: 40px; height: 24px; display: inline-block; position: absolute; right: 200px;"></span>
-                        <span class="badge hi-bgyellow pen-slot" style="display: none; width: 40px; height: 24px; position: absolute; right: 200px;" id="aka_pen4_output"></span>
+                        <span class="badge bgyellow pen-slot" style="display: none; width: 40px; height: 24px; position: absolute; right: 200px;" id="aka_pen4_output"></span>
                         <!-- Pen 5 -->
                         <span class="badge outline-danger" id="aka_pen5_placeholder" style="width: 40px; height: 24px; display: inline-block; position: absolute; right: 150px;"></span>
-                        <span class="badge hi-bgred pen-slot" style="display: none; width: 40px; height: 24px; position: absolute; right: 150px;" id="aka_pen5_output"></span>
+                        <span class="badge bgred pen-slot" style="display: none; width: 40px; height: 24px; position: absolute; right: 150px;" id="aka_pen5_output"></span>
                     
                         <!-- Labels -->
                         <span style="position: absolute; top: 20px; right: 160px; font-size: 20px; font-weight: bold;">H</span>
@@ -129,7 +138,7 @@
             </div>
 
             <!-- Timer -->
-            <div class="container text-center row my-0" style="margin: 0; padding-bottom: 250px;">
+            <div class="container text-center row my-0" style="margin: 0;">
                 <div class="row align-items-center" style="margin: 0; padding: 0;">
                     <div class="text-center" style="margin: 0; padding: 0;">
                         <h1 id="outputMinute" style="display: inline; font-size: 4.5em;">00</h1>
@@ -190,7 +199,7 @@
                 <div class="row mx-1">
                     
                     <!-- AO -->
-                    <div class="col-6 hi-outblue">
+                    <div class="col-6 outblue">
                         <!-- Header -->
                         <div class="row align-items-center">
                             <div class="col justify-content-center">
@@ -229,7 +238,7 @@
                     </div>
 
                     <!-- AKA -->
-                    <div class="col-6 hi-outred">
+                    <div class="col-6 outred">
                         <!-- Header -->
                         <div class="row align-items-center">
                             <div class="col justify-content-center">
@@ -297,7 +306,7 @@
                 <div class="row mx-1">
 
                     <!-- AO -->
-                    <div class="col-6 hi-outblue">
+                    <div class="col-6 outblue">
                         <!-- Senshu -->
                         <div class="row align-items-center mt-1">
                             <div class="col justify-content-center">
@@ -346,7 +355,7 @@
                     </div>
 
                     <!-- AKA -->
-                    <div class="col-6 hi-outred">
+                    <div class="col-6 outred">
                         <!-- Senshu -->
                         <div class="row align-items-center mt-1">
                             <div class="col justify-content-center">
@@ -400,7 +409,7 @@
 
     <!-- Instructions -->
     <div class="d-flex justify-content-start">
-        <div class="col-7 bg-dark text-white p-2">
+        <div class="col-7 bgblack text-white px-5 py-5">
             <p>
                 Instructions:<br>
                 1. Switch the display using the AO - AKA buttons to show AKA - AO or vice versa. <br>
