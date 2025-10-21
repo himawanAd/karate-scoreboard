@@ -10,56 +10,52 @@
 </head>
 <body>
     <div class="d-flex justify-content-start">
+        <!-- Display -->
         <div class="col-7 bg-dark text-white">
-            <h3 class="my-4 text-center" id="title_output">KEJUARAAN KARATE PELAJAR & MAHASISWA SE-JAWA TENGAH PIALA KAPOLRESTA SURAKARTA TAHUN 2024</h3>
+
+            <!-- Header -->
+            <div class="position-relative text-center">
+                <h3 class="mt-2" style="font-size: 1.5em" id="title_output">SEBELAS MARET OPEN II</h3>
+                <h4 class="my-2" style="font-size: 1.5em" id="subtitle_output">INTERNATIONAL KARATE CHAMPIONSHIP 2025</h4>
+                <span id="tatami_output" style="color:greenyellow; position: absolute; bottom: -40px; left: 50%; transform: translateX(-50%); font-size: 1.5em;">TATAMI I</span>
+            </div>
+
+            <!-- Score -->
             <div class="row my-2">
                 <!-- AKA -->
                 <div class="col-6">
-                    <!-- nationality -->
                     <div class="row mx-0">
-                        <div class="col-1">
-                            <img src="assets/idn.svg" width="28" height="28">
+                        <div class="aka-flag">
+                            <img id="aka_flag_output" src="assets/flag/id.svg" width="40" height="28">
                         </div>
-                        <div class="col-2">
-                            <h5>IDN</h5>
-                        </div>
-                    </div>
-                    <!-- athlete -->
-                    <div class="row mx-0">
                         <h4 class="mb-0" id="aka_name_output">-</h4>
                         <h6 id="aka_team_output">-</h6>
-                        <div class="d-flex my-4 align-items-center">
+                        <div class="d-flex my-0 align-items-center">
                             <div class="p-1 flex-grow-1 hi-green text-center">
                                 <div id="aka_win_output" style="display: none;">
                                     <h1 id="aka_blink">WIN</h1>
                                 </div>
                             </div>
-                            <div class="p-0 badge hi-bgred" style="width: 120px; height: 120px;">
-                                <h1 class="display-1" style="font-family: 'Arial Black';" id="score_aka"></h1>
-                                <div class="col-12 text-center hi-bggreen" id="aka_senshu_output" style="display: none;">SENSHU</div>
+                            <div class="p-0 badge hi-bgred" style="width: 160px; height: 160px; margin-bottom: 10px;">
+                                <h1 class="display-1" style="font-family: 'Arial Black'; font-size: 8rem;" id="score_aka"></h1>
+                                <div class="col-12 text-center hi-bggreen" id="aka_senshu_output" style="display: none;font-size: 2rem;">SENSHU</div>
                             </div>
                         </div>
                     </div>
                 </div>
+
                 <!-- AO -->
                 <div class="col-6 text-end">
-                    <!-- nationality -->
-                    <div class="row mx-0 justify-content-end">
-                        <div class="col-2 mx-0 px-0">
-                            <h5>IDN</h5>
-                        </div>
-                        <div class="col-1 me-4">
-                            <img src="assets/idn.svg" width="28" height="28">
-                        </div>
-                    </div>
-                    <!-- athlete -->
                     <div class="row mx-0">
+                        <div class="ao-flag">
+                            <img id="ao_flag_output" src="assets/flag/id.svg" width="40" height="28">
+                        </div>
                         <h4 class="me-3 mb-0" id="ao_name_output">-</h4>
                         <h6 class="me-3" id="ao_team_output">-</h6>
-                        <div class="d-flex my-4 align-items-center">
-                            <div class="p-0 badge hi-bgblue" ] style="width: 120px; height: 120px;">
-                                <h1 class="display-1" style="font-family: 'Arial Black';" id="score_ao"></h1>
-                                <div class="col-12 text-center hi-bggreen" id="ao_senshu_output" style="display: none;">SENSHU</div>
+                        <div class="d-flex my-0 align-items-center">
+                            <div class="p-0 badge hi-bgblue" style="width: 160px; height: 160px; margin-bottom: 10px;">
+                                <h1 class="display-1" style="font-family: 'Arial Black'; font-size: 8rem;" id="score_ao"></h1>
+                                <div class="col-12 text-center hi-bggreen" id="ao_senshu_output" style="display: none;font-size: 2rem;">SENSHU</div>
                             </div>
                             <div class="p-1 flex-grow-1 hi-green text-center" id="ao_win_output" style="display: none;">
                                 <h1 id="ao_blink">WIN</h1>
@@ -68,91 +64,162 @@
                     </div>
                 </div>
             </div>
-            <div class="container text-center">
-                <div class="row my-2" style="border-bottom: 1px solid grey;">
-                    <div class="col-5">
-                        <span class="badge hi-bgyellow" style="display: none; width: 48px; height: 24px;" id="aka_pen1_output"> </span>
-                        <span class="badge hi-bgyellow" style="display: none; width: 48px; height: 24px;" id="aka_pen2_output"> </span>
-                        <span class="badge hi-bgyellow" style="display: none; width: 48px; height: 24px;" id="aka_pen3_output"> </span>
-                        <span class="badge hi-bgyellow" style="display: none; width: 48px; height: 24px;" id="aka_pen4_output"> </span>
-                        <span class="badge hi-bgred" style="display: none; width: 48px; height: 24px;" id="aka_pen5_output"> </span>
+
+            <!-- Penalties -->
+            <div class="container text-center my-0">
+                <div class="row" style="border-bottom: 1px solid grey;">
+                    
+                    <!-- AKA Penalties -->
+                    <div class="col-5 position-relative my-4" style="height: 1rem;">
+                        <!-- Pen 1 -->
+                        <span class="badge outline-warning" id="aka_pen1_placeholder" style="width: 40px; height: 24px; display: inline-block; position: absolute; left: 150px;"></span>
+                        <span class="badge hi-bgyellow pen-slot" style="display: none; width: 40px; height: 24px; position: absolute; left: 150px;" id="aka_pen1_output"></span>
+                        <!-- Pen 2 -->
+                        <span class="badge outline-warning" id="aka_pen2_placeholder" style="width: 40px; height: 24px; display: inline-block; position: absolute; left: 200px;"></span>
+                        <span class="badge hi-bgyellow pen-slot" style="display: none; width: 40px; height: 24px; position: absolute; left: 200px;" id="aka_pen2_output"></span>
+                        <!-- Pen 3 -->
+                        <span class="badge outline-warning" id="aka_pen3_placeholder" style="width: 40px; height: 24px; display: inline-block; position: absolute; left: 250px;"></span>
+                        <span class="badge hi-bgyellow pen-slot" style="display: none; width: 40px; height: 24px; position: absolute; left: 250px;" id="aka_pen3_output"></span>
+                        <!-- Pen 4 -->
+                        <span class="badge outline-warning" id="aka_pen4_placeholder" style="width: 40px; height: 24px; display: inline-block; position: absolute; left: 300px;"></span>
+                        <span class="badge hi-bgyellow pen-slot" style="display: none; width: 40px; height: 24px; position: absolute; left: 300px;" id="aka_pen4_output"></span>
+                        <!-- Pen 5 -->
+                        <span class="badge outline-danger" id="aka_pen5_placeholder" style="width: 40px; height: 24px; display: inline-block; position: absolute; left: 350px;"></span>
+                        <span class="badge hi-bgred pen-slot" style="display: none; width: 40px; height: 24px; position: absolute; left: 350px;" id="aka_pen5_output"></span>
+                    
+                        <!-- Labels -->
+                        <span style="position: absolute; top: 20px; left: 155px; font-size: 20px; font-weight: bold;">C1</span>
+                        <span style="position: absolute; top: 20px; left: 205px; font-size: 20px; font-weight: bold;">C2</span>
+                        <span style="position: absolute; top: 20px; left: 255px; font-size: 20px; font-weight: bold;">C3</span>
+                        <span style="position: absolute; top: 20px; left: 305px; font-size: 20px; font-weight: bold;">HC</span>
+                        <span style="position: absolute; top: 20px; left: 365px; font-size: 20px; font-weight: bold;">H</span>
                     </div>
-                    <div class="col-2">
-                        <h5>PENALTIES</h5>
+                                 
+                    <!-- Penalties Text -->
+                    <div class="col-2 my-4">
+                            <h5 style="font-size: 1em; margin:0; padding:0;">PENALTIES</h5>
                     </div>
-                    <div class="col-5">
-                        <span class="badge hi-bgred" style="display: none; width: 48px; height: 24px;" id="ao_pen5_output"> </span>
-                        <span class="badge hi-bgyellow" style="display: none; width: 48px; height: 24px;" id="ao_pen4_output"> </span>
-                        <span class="badge hi-bgyellow" style="display: none; width: 48px; height: 24px;" id="ao_pen3_output"> </span>
-                        <span class="badge hi-bgyellow" style="display: none; width: 48px; height: 24px;" id="ao_pen2_output"> </span>
-                        <span class="badge hi-bgyellow" style="display: none; width: 48px; height: 24px;" id="ao_pen1_output"> </span>
-                    </div>
+
+                    <!-- AO Penalties -->
+                    <div class="col-5 position-relative my-4" style="height: 2rem;"> 
+                        <!-- Pen 1 -->
+                        <span class="badge outline-warning" id="ao_pen1_placeholder" style="width: 40px; height: 24px; display: inline-block; position: absolute; right: 350px;"></span>
+                        <span class="badge hi-bgyellow pen-slot" style="display: none; width: 40px; height: 24px; position: absolute; right: 350px;" id="ao_pen1_output"></span>
+                        <!-- Pen 2 -->
+                        <span class="badge outline-warning" id="ao_pen2_placeholder" style="width: 40px; height: 24px; display: inline-block; position: absolute; right: 300px;"></span>
+                        <span class="badge hi-bgyellow pen-slot" style="display: none; width: 40px; height: 24px; position: absolute; right: 300px;" id="ao_pen2_output"></span>
+                        <!-- Pen 3 -->
+                        <span class="badge outline-warning" id="ao_pen3_placeholder" style="width: 40px; height: 24px; display: inline-block; position: absolute; right: 250px;"></span>
+                        <span class="badge hi-bgyellow pen-slot" style="display: none; width: 40px; height: 24px; position: absolute; right: 250px;" id="ao_pen3_output"></span>
+                        <!-- Pen 4 -->
+                        <span class="badge outline-warning" id="ao_pen4_placeholder" style="width: 40px; height: 24px; display: inline-block; position: absolute; right: 200px;"></span>
+                        <span class="badge hi-bgyellow pen-slot" style="display: none; width: 40px; height: 24px; position: absolute; right: 200px;" id="ao_pen4_output"></span>
+                        <!-- Pen 5 -->
+                        <span class="badge outline-danger" id="ao_pen5_placeholder" style="width: 40px; height: 24px; display: inline-block; position: absolute; right: 150px;"></span>
+                        <span class="badge hi-bgred pen-slot" style="display: none; width: 40px; height: 24px; position: absolute; right: 150px;" id="ao_pen5_output"></span>
+                    
+                        <!-- Labels -->
+                        <span style="position: absolute; top: 20px; right: 160px; font-size: 20px; font-weight: bold;">H</span>
+                        <span style="position: absolute; top: 20px; right: 205px; font-size: 20px; font-weight: bold;">HC</span>
+                        <span style="position: absolute; top: 20px; right: 255px; font-size: 20px; font-weight: bold;">C3</span>
+                        <span style="position: absolute; top: 20px; right: 305px; font-size: 20px; font-weight: bold;">C2</span>
+                        <span style="position: absolute; top: 20px; right: 360px; font-size: 20px; font-weight: bold;">C1</span>
+                    </div>                    
                 </div>
             </div>
-            <div class="container text-center">
-                <div class="row align-items-center my-3">
-                    <div class="col-4"><h4 id="tatami_output">-</h4></div>
-                    <div class="col-4" id="outputTimer">
-                        <h1 id="outputMinute" style="display: inline;">00</h1><h1 style="display: inline;">:</h1><h1 id="outputSecond" style="display: inline;">00</h1>.<h3 id="outputMilisecond" style="display: inline;">0</h3>
+
+            <!-- Timer -->
+            <div class="container text-center row my-0" style="margin: 0; padding-bottom: 250px;">
+                <div class="row align-items-center" style="margin: 0; padding: 0;">
+                    <div class="text-center" style="margin: 0; padding: 0;">
+                        <h1 id="outputMinute" style="display: inline; font-size: 4.5em;">00</h1>
+                        <h1 style="display: inline; font-size: 4.5em;">:</h1>
+                        <h1 id="outputSecond" style="display: inline; font-size: 4.5em;">00</h1>
+                        <h1 style="display: inline; font-size: 4.5em;">.</h1>
+                        <h3 id="outputMilisecond" style="display: inline; font-size: 4em;">0</h3>
                     </div>
-                    <div class="col-4 text-end"><h5 id="roundclass_output">-</h5></div>
                 </div>
             </div>
         </div>
+
+        <!-- Control Panel -->
         <div class="col-5 mx-2 my-4">
             <h2 class="text-center">KUMITE SCOREBOARD</h2>
+            <!-- Header Input -->
             <!-- <div class="mb-3 row">
                 <label for="judul" class="col-sm-2 col-form-label">Judul</label>
                 <div class="col-sm-9">
-                    <input type="text" value="KEJUARAAN KARATE PELAJAR & MAHASISWA SE-JAWA TENGAH PIALA KAPOLRESTA SURAKARTA TAHUN 2024" class="form-control" id="title_input" onchange="js_title()">
+                    <input type="text" value="KEJUARAAN KARATE PELAJAR & MAHASISWA SE-JAWA TENGAH PIALA KADISPORA SURAKARTA TAHUN 2024" class="form-control" id="title_input" onchange="js_title()">
                 </div>
             </div> -->
-            <div class="mb-3 row form-inline">
+            <!-- <div class="mb-3 row form-inline">
                 <div class="col-sm-11">
                     <input type="text" value="" placeholder="KELAS PERTANDINGAN" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Kelas Pertandingan" class="form-control" id="roundclass_input" onchange="js_roundclass()">
                 </div>
-            </div>
+            </div> -->
+
+            <!-- Tatami Control -->
             <div class="mb-3 row align-items-center">
+                <!-- Tatami Number -->
                 <div class="col-sm-2">
-                    <input type="number" value="" placeholder="TATAMI" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Nomor Tatami" class="form-control" id="tatami_input" onchange="js_tatami()">
+                    <input type="text" value="I" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Tatami Number" class="form-control" id="tatami_input" onchange="js_tatami()">
                 </div>
+                <!-- Point Difference to Win -->
                 <div class="col-sm-2">
-                    <input id="dev_point" min="0"  type="number" value="8" placeholder="SELISIH" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="SELISIH POIN" class="form-control" onchange="js_dev_point()">
-                </div>
-                <div class="col-sm-3">
-                    <a href="Kumite Scoreboard - Reverse Display.html"><button type="button" class="btn btn-outline-success btn-sm" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Reverse Display">CHANGE DISPLAY</button></a>
-                </div>
+                    <input id="dev_point" min="0" type="number" value="8" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Point Difference to Win" class="form-control" onchange="js_dev_point()">
+                </div>          
+                <!-- Change Display Button -->
                 <div class="col-sm-2">
-                    <input id="inputMinute" min="0" type="number" value="3" placeholder="MENIT" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="MENIT TIMER" class="form-control">
+                    <a href="Kumite Scoreboard - Reverse Display.html"><button type="button" class="btn btn-outline-success btn-sm" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Click to change AO - AKA">AKA - AO</button></a>
+                </div>
+                <!-- Timer Input -->
+                <div class="col-sm-2">
+                    <input id="inputMinute" min="0" type="number" value="2" placeholder="MENIT" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Minute Timer" class="form-control">
                 </div> :
                 <div class="col-sm-2">
-                    <input id="inputSecond" min="0" type="number" max="60" value="00" placeholder="DETIK" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="DETIK TIMER" class="form-control">
+                    <input id="inputSecond" min="0" type="number" max="60" value="00" placeholder="DETIK" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Second Timer" class="form-control">
+                </div>
+                <!-- Add +1Sec Button -->
+                <div class="col-sm">
+                    <button type="button" class="btn btn-primary btn-sm" id="add_time_button" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="+1 Second">+1 Sec</button>
                 </div>
             </div>
+            
+            <!-- Player Control -->
             <div class="container text-center mt-2">
                 <div class="row mx-1">
+                    
+                    <!-- AKA -->
                     <div class="col-6 hi-outred">
+                        <!-- Header -->
                         <div class="row align-items-center">
                             <div class="col justify-content-center">
-                                <h6>AKA</h6>
+                                <H6>AKA</H6>
                             </div>
                         </div>
+                        <!-- Nationality -->
                         <div class="row form-inline">
                             <label for="nationality" class="col-sm-2 col-form-label">NAT</label>
                             <div class="col-sm-6">
-                                <select class="form-select form-select-sm" aria-label="Select Nationality">
-                                    <option selected value="id">Indonesia</option>
-                                    <!-- <option value="my">Malaysia</option>
-                                    <option value="sg">Singapura</option> -->
+                                <select id="aka_nat_input" class="form-select form-select-sm" aria-label="Select Nationality">
+                                    <option selected value="INA" data-flag="assets/flag/id.svg">Indonesia</option>
+                                    <option value="BRU" data-flag="assets/flag/bn.svg">Brunei Darussalam</option>
+                                    <option value="MAS" data-flag="assets/flag/my.svg">Malaysia</option>
+                                    <option value="SDN" data-flag="assets/flag/sd.svg">Sudan</option>
+                                    <option value="MYA" data-flag="assets/flag/mm.svg">Myanmar</option>
+                                    <option value="MAR" data-flag="assets/flag/ma.svg">Morocco</option>
+                                    <option value="TAN" data-flag="assets/flag/tz.svg">Tanzania</option>
                                 </select>
                             </div>
                         </div>
+                        <!-- Name -->
                         <div class="row">
-                            <label for="aka_name" class="col-sm-2 col-form-label">Nama</label>
+                            <label for="aka_name" class="col-sm-2 col-form-label">Name</label>
                             <div class="col-sm-10">
                                 <input type="text" value="" class="form-control form-control-sm" id="aka_name_input" onchange="js_aka_name()">
                             </div>
                         </div>
+                        <!-- Team -->
                         <div class="row">
                             <label for="aka_team" class="col-sm-2 col-form-label">Team</label>
                             <div class="col-sm-10">
@@ -160,28 +227,40 @@
                             </div>
                         </div>
                     </div>
+
+                    <!-- AO -->
                     <div class="col-6 hi-outblue">
+                        <!-- Header -->
                         <div class="row align-items-center">
                             <div class="col justify-content-center">
-                                <H6>AO</H6>
+                                <h6>AO</h6>
                             </div>
                         </div>
+                        <!-- Nationality -->
                         <div class="row form-inline">
                             <label for="nationality" class="col-sm-2 col-form-label">NAT</label>
                             <div class="col-sm-6">
-                                <select class="form-select form-select-sm" aria-label="Select Nationality">
-                                    <option selected value="id">Indonesia</option>
+                                <select id="ao_nat_input" class="form-select form-select-sm" aria-label="Select Nationality">
+                                    <option selected value="INA" data-flag="assets/flag/id.svg">Indonesia</option>
+                                    <option value="BRU" data-flag="assets/flag/bn.svg">Brunei Darussalam</option>
+                                    <option value="MAS" data-flag="assets/flag/my.svg">Malaysia</option>
+                                    <option value="SDN" data-flag="assets/flag/sd.svg">Sudan</option>
+                                    <option value="MYA" data-flag="assets/flag/mm.svg">Myanmar</option>
+                                    <option value="MAR" data-flag="assets/flag/ma.svg">Morocco</option>
+                                    <option value="TAN" data-flag="assets/flag/tz.svg">Tanzania</option>
                                 </select>
                             </div>
                         </div>
+                        <!-- Name -->
                         <div class="row">
-                            <label for="aka_name" class="col-sm-2 col-form-label">Nama</label>
+                            <label for="ao_name" class="col-sm-2 col-form-label">Name</label>
                             <div class="col-sm-10">
                                 <input type="text" value="" class="form-control form-control-sm" id="ao_name_input" onchange="js_ao_name()">
                             </div>
                         </div>
+                        <!-- Team -->
                         <div class="row">
-                            <label for="aka_team" class="col-sm-2 col-form-label">Team</label>
+                            <label for="ao_team" class="col-sm-2 col-form-label">Team</label>
                             <div class="col-sm-10">
                                 <input type="text" value="" class="form-control form-control-sm" id="ao_team_input" onchange="js_ao_team()">
                             </div>
@@ -189,32 +268,44 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Round Control -->
             <div class="container text-center">
                 <div class="row mt-1 align-items-center">
+                    <!-- Round Set -->
                     <div class="col">
                         <button type="button" class="btn btn-primary btn-sm" onclick="round_set()" style="display: inline-block;">SET GAME</button>
                     </div>
+                    <!-- Start / Pause -->
                     <div class="col">
                         <button type="button" class="btn btn-success btn-sm" onclick="StartClock()" id="startTime" style="display: inline-block;">START</button>
                         <button type="button" class="btn btn-warning btn-sm" onclick="PauseClock()" id="pauseTime" style="display: none;">PAUSE</button>
                     </div>
+                    <!-- Stop -->
                     <div class="col">
                         <button type="button" class="btn btn-danger btn-sm" onclick="StopClock()" id="stopTime" style="display: inline-block;">STOP</button>
                     </div>
+                    <!-- Clear -->
                     <div class="col">
                         <button type="button" class="btn btn-secondary btn-sm" onclick="clear_set()" id="clear_set" style="display: inline-block;">CLEAR</button>
                     </div>
                 </div>
             </div>
+
+            <!-- Player Score Control -->
             <div class="container text-center mt-2">
                 <div class="row mx-1">
+
+                    <!-- AKA -->
                     <div class="col-6 hi-outred">
+                        <!-- Senshu -->
                         <div class="row align-items-center mt-1">
                             <div class="col justify-content-center">
                                 <button type="button" class="btn btn-outline-success btn-sm" id="aka_senshu_on" style="display: inline-block;" onclick="aka_senshu_on()">SENSHU</button>
                                 <button type="button" class="btn btn-success btn-sm" id="aka_senshu_off" style="display: none;" onclick="aka_senshu_off()">SENSHU</button>
                             </div>
                         </div>
+                        <!-- Point -->
                         <div class="my-1 row align-items-center">
                             <label for="pts" class="col-sm-2 col-form-label">Pts</label>
                             <div class="col-sm-10 text-center">
@@ -224,21 +315,28 @@
                                 <button type="button" class="btn btn-outline-danger btn-sm" onclick="aka_minus()">-1</button>
                             </div>
                         </div>
-                        <div class="my-1 row align-items-center">
+                        <!-- Penalties -->
+                        <div class="my-1 row">
                             <label for="penalties" class="col-sm-12 col-form-label">PENALTIES</label>
                             <div class="col-sm-10 mb-3">
+                                <!-- Pen 1 -->
                                 <button type="button" class="btn btn-outline-warning" id="aka_pen1_on" style="width: 40px; height: 24px; display: inline-block;" onclick="aka_pen1_on()"></button>
                                 <button type="button" class="btn btn-warning" id="aka_pen1_off" style="width: 40px; height: 24px; display: none;" onclick="aka_pen1_off()"></button>
+                                <!-- Pen 2 -->
                                 <button type="button" class="btn btn-outline-warning" id="aka_pen2_on" style="width: 40px; height: 24px; display: inline-block;" onclick="aka_pen2_on()"></button>
                                 <button type="button" class="btn btn-warning" id="aka_pen2_off" style="width: 40px; height: 24px; display: none;" onclick="aka_pen2_off()"></button>
+                                <!-- Pen 3 -->
                                 <button type="button" class="btn btn-outline-warning" id="aka_pen3_on" style="width: 40px; height: 24px; display: inline-block;" onclick="aka_pen3_on()"></button>
                                 <button type="button" class="btn btn-warning" id="aka_pen3_off" style="width: 40px; height: 24px; display: none;" onclick="aka_pen3_off()"></button>
+                                <!-- Pen 4 -->
                                 <button type="button" class="btn btn-outline-warning" id="aka_pen4_on" style="width: 40px; height: 24px; display: inline-block;" onclick="aka_pen4_on()"></button>
                                 <button type="button" class="btn btn-warning" id="aka_pen4_off" style="width: 40px; height: 24px; display: none;" onclick="aka_pen4_off()"></button>
+                                <!-- Pen 5 -->
                                 <button type="button" class="btn btn-outline-danger" id="aka_pen5_on" style="width: 40px; height: 24px; display: inline-block;" onclick="aka_pen5_on()"></button>
                                 <button type="button" class="btn btn-danger" id="aka_pen5_off" style="width: 40px; height: 24px; display: none;" onclick="aka_pen5_off()"></button>
                             </div>
                         </div>
+                        <!-- Win -->
                         <div class="mb-3 row">
                             <div class="col-12">
                                 <button type="button" class="btn btn-outline-success btn-sm" id="aka_win_on" style="display: inline-block;" onclick="aka_win_on()">WIN</button>
@@ -246,13 +344,17 @@
                             </div>
                         </div>
                     </div>
+
+                    <!-- AO -->
                     <div class="col-6 hi-outblue">
+                        <!-- Senshu -->
                         <div class="row align-items-center mt-1">
                             <div class="col justify-content-center">
                                 <button type="button" class="btn btn-outline-success btn-sm" id="ao_senshu_on" style="display: inline-block;" onclick="ao_senshu_on()">SENSHU</button>
                                 <button type="button" class="btn btn-success btn-sm" id="ao_senshu_off" style="display: none;" onclick="ao_senshu_off()">SENSHU</button>
                             </div>
                         </div>
+                        <!-- Point -->
                         <div class="my-1 row align-items-center">
                             <label for="pts" class="col-sm-2 col-form-label">Pts</label>
                             <div class="col-sm-10 text-center">
@@ -262,21 +364,28 @@
                                 <button type="button" class="btn btn-outline-danger btn-sm" onclick="ao_minus()">-1</button>
                             </div>
                         </div>
-                        <div class="my-1 row">
+                        <!-- Penalties -->
+                        <div class="my-1 row align-items-center">
                             <label for="penalties" class="col-sm-12 col-form-label">PENALTIES</label>
                             <div class="col-sm-10 mb-3">
+                                <!-- Pen 1 -->
                                 <button type="button" class="btn btn-outline-warning" id="ao_pen1_on" style="width: 40px; height: 24px; display: inline-block;" onclick="ao_pen1_on()"></button>
                                 <button type="button" class="btn btn-warning" id="ao_pen1_off" style="width: 40px; height: 24px; display: none;" onclick="ao_pen1_off()"></button>
+                                <!-- Pen 2 -->
                                 <button type="button" class="btn btn-outline-warning" id="ao_pen2_on" style="width: 40px; height: 24px; display: inline-block;" onclick="ao_pen2_on()"></button>
                                 <button type="button" class="btn btn-warning" id="ao_pen2_off" style="width: 40px; height: 24px; display: none;" onclick="ao_pen2_off()"></button>
+                                <!-- Pen 3 -->
                                 <button type="button" class="btn btn-outline-warning" id="ao_pen3_on" style="width: 40px; height: 24px; display: inline-block;" onclick="ao_pen3_on()"></button>
                                 <button type="button" class="btn btn-warning" id="ao_pen3_off" style="width: 40px; height: 24px; display: none;" onclick="ao_pen3_off()"></button>
+                                <!-- Pen 4 -->
                                 <button type="button" class="btn btn-outline-warning" id="ao_pen4_on" style="width: 40px; height: 24px; display: inline-block;" onclick="ao_pen4_on()"></button>
                                 <button type="button" class="btn btn-warning" id="ao_pen4_off" style="width: 40px; height: 24px; display: none;" onclick="ao_pen4_off()"></button>
+                                <!-- Pen 5 -->
                                 <button type="button" class="btn btn-outline-danger" id="ao_pen5_on" style="width: 40px; height: 24px; display: inline-block;" onclick="ao_pen5_on()"></button>
                                 <button type="button" class="btn btn-danger" id="ao_pen5_off" style="width: 40px; height: 24px; display: none;" onclick="ao_pen5_off()"></button>
                             </div>
                         </div>
+                        <!-- Win -->
                         <div class="mb-3 row">
                             <div class="col-12">
                                 <button type="button" class="btn btn-outline-success btn-sm" id="ao_win_on" style="display: inline-block;" onclick="ao_win_on()">WIN</button>
@@ -286,6 +395,21 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+
+    <!-- Instructions -->
+    <div class="d-flex justify-content-start">
+        <div class="col-7 bg-dark text-white p-2">
+            <p>
+                Instructions:<br>
+                1. Switch the display using the AKA - AO buttons to show AO - AKA or vice versa. <br>
+                2. Set the Tatami Number, Point Difference to Win, and Timer on the provided form.<br>
+                3. Enter the competitors Name and Team. Click SET GAME to display the data on screen.<br>
+                4. Click START/PAUSE to start/pause the match. Click STOP to end the match. Click CLEAR to clear competitor data.<br>
+                5. Adjust SENSHU, Pts, and PENALTIES according to the match progress.<br>
+                6. Click WIN to declare the winner. WIN may appear automatically if: a competitor is leading when time runs out; a competitor has SENSHU when the score is tied and time runs out; a competitor exceeds the Point Difference to Win; or the opponent exceeds the penalty limit.
+            </p>
         </div>
     </div>
     <script src="js/kumite-script.js"></script>

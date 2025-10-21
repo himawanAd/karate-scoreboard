@@ -4,6 +4,9 @@
 .hi-black {
     color: #1c2125;
 }
+.hi-bgblack {
+    background-color: #1c2125;
+}
 .hi-red {
     color: #cc0000;
 }
@@ -45,4 +48,33 @@
 }
 .hi-bgblue {
     background-color: #0000cc;
+}
+
+tr {
+    background-color: #1c2125;
+}
+th {
+    background-color: #1c2125;
+}
+
+.outline-warning {
+    border: 2px solid orange;
+}
+
+.outline-danger {
+    border: 2px solid red;
+}
+
+.hi-bgyellow, .hi-bgred {
+    /* When the actual pen slot is visible, it will replace the placeholder */
+    border: none;
+}
+
+.title-wrap { 
+    position: relative; 
+    z-index: 100; 
+}
+
+.time-danger { 
+    color: red !important; 
 }
