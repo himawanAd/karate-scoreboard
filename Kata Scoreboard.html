@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <title>Kata Scoreboard</title>
+</head>
+<body>
+    <div class="d-flex justify-content-start">
+        <div class="card hi-bgblack text-white" style="width: 800px; height: 460px;">
+            <!-- Output List Atlet -->
+            <div class="container" id="list_output" style="display: block;">
+                <div class="card-body pt-2">
+                    <h5 class="card-title text-center">KEJUARAAN KARATE PELAJAR DAN MAHASISWA <br>"PIALA KAPOLRESTA SURAKARTA TAHUN 2024"</h5>
+                    <div class="row align-items-center">
+                        <div class="col">
+                            <h6 class="card-title" id="kelas_list_output">KELAS -</h6>
+                        </div>
+                        <div class="col-2">
+                            <h6 class="card-title text-end" id="tatami_list_output">TATAMI -</h6>
+                        </div>
+                    </div>
+                    <div class="row g-0 align-items-center" id="athlete1_output" style="display:none">
+                        <div class="col-md-1 me-1 hi-bgred" id="athlete1_belt_output" style="width: 10px; height: 40px;"></div>
+                        <div class="col-md-10">
+                            <h6 class="card-text mb-0" id="athlete1_name_output">-</h6>
+                            <small><i id="athlete1_team_output">-</i></small>
+                        </div>
+                        <div class="col-md-1 text-end">
+                            <h6 class="card-text mb-0" id="athlete1_score_output"></h6>
+                        </div>
+                    </div>
+                    <div class="row g-0 align-items-center" id="athlete2_output" style="display:none">
+                        <div class="col-md-1 me-1 hi-bgred" id="athlete2_belt_output" style="width: 10px; height: 40px;"></div>
+                        <div class="col-md-10">
+                            <h6 class="card-text mb-0" id="athlete2_name_output">-</h6>
+                            <small><i id="athlete2_team_output">-</i></small>
+                        </div>
+                        <div class="col-md-1 text-end">
+                            <h6 class="card-text mb-0" id="athlete2_score_output"></h6>
+                        </div>
+                    </div>
+                    <div class="row g-0 align-items-center" id="athlete3_output" style="display:none">
+                        <div class="col-md-1 me-1 hi-bgred" id="athlete3_belt_output" style="width: 10px; height: 40px;"></div>
+                        <div class="col-md-10">
+                            <h6 class="card-text mb-0" id="athlete3_name_output">-</h6>
+                            <small><i id="athlete3_team_output">-</i></small>
+                        </div>
+                        <div class="col-md-1 text-end">
+                            <h6 class="card-text mb-0" id="athlete3_score_output"></h6>
+                        </div>
+                    </div>
+                    <div class="row g-0 align-items-center" id="athlete4_output" style="display:none">
+                        <div class="col-md-1 me-1 hi-bgred" id="athlete4_belt_output" style="width: 10px; height: 40px;"></div>
+                        <div class="col-md-10">
+                            <h6 class="card-text mb-0" id="athlete4_name_output">-</h6>
+                            <small><i id="athlete4_team_output">-</i></small>
+                        </div>
+                        <div class="col-md-1 text-end">
+                            <h6 class="card-text mb-0" id="athlete4_score_output"></h6>
+                        </div>
+                    </div>
+                    <div class="row g-0 align-items-center" id="athlete5_output" style="display:none">
+                        <div class="col-md-1 me-1 hi-bgred" id="athlete5_belt_output" style="width: 10px; height: 40px;"></div>
+                        <div class="col-md-10">
+                            <h6 class="card-text mb-0" id="athlete5_name_output">-</h6>
+                            <small><i id="athlete5_team_output">-</i></small>
+                        </div>
+                        <div class="col-md-1 text-end">
+                            <h6 class="card-text mb-0" id="athlete5_score_output"></h6>
+                        </div>
+                    </div>
+                    <div class="row g-0 align-items-center" id="athlete6_output" style="display:none">
+                        <div class="col-md-1 me-1 hi-bgred" id="athlete6_belt_output" style="width: 10px; height: 40px;"></div>
+                        <div class="col-md-10">
+                            <h6 class="card-text mb-0" id="athlete6_name_output">-</h6>
+                            <small><i id="athlete6_team_output">-</i></small>
+                        </div>
+                        <div class="col-md-1 text-end">
+                            <h6 class="card-text mb-0" id="athlete6_score_output"></h6>
+                        </div>
+                    </div>
+                    <div class="row g-0 align-items-center" id="athlete7_output" style="display:none">
+                        <div class="col-md-1 me-1 hi-bgred" id="athlete7_belt_output" style="width: 10px; height: 40px;"></div>
+                        <div class="col-md-10">
+                            <h6 class="card-text mb-0" id="athlete7_name_output">-</h6>
+                            <small><i id="athlete7_team_output">-</i></small>
+                        </div>
+                        <div class="col-md-1 text-end">
+                            <h6 class="card-text mb-0" id="athlete7_score_output"></h6>
+                        </div>
+                    </div>
+                    <div class="row g-0 align-items-center" id="athlete8_output" style="display:none">
+                        <div class="col-md-1 me-1 hi-bgred" id="athlete8_belt_output" style="width: 10px; height: 40px;"></div>
+                        <div class="col-md-10">
+                            <h6 class="card-text mb-0" id="athlete8_name_output">-</h6>
+                            <small><i id="athlete8_team_output">-</i></small>
+                        </div>
+                        <div class="col-md-1 text-end">
+                            <h6 class="card-text mb-0" id="athlete8_score_output"></h6>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            <!-- Output Scoreboard -->
+            <div class="container" id="scoreboard_output" style="display: none;">
+                <div class="card-body pt-2" style="height: 360px;">
+                    <h5 class="card-title text-center">KEJUARAAN KARATE PELAJAR DAN MAHASISWA <br>"PIALA KAPOLRESTA SURAKARTA TAHUN 2024"</h5>
+                    <h6 class="card-title" id="tatami_scoreboard_output">TATAMI -</h6>
+                    <h5 class="card-title" id="kelas_scoreboard_output">KELAS -</h5>
+                    <div class="container" id="scoreboard_athlete1_output" style="display: block;">
+                        <div class="row g-0 align-items-center">
+                            <div class="col-md-4 me-2 hi-bgred text-center" id="athlete1_scoreboard_belt_output" style="width: 100px; height: 100px;">
+                                <h1 class="my-4" id="athlete1_scoreboard_total_output"></h1>
+                            </div>
+                            <div class="col-md-8">
+                                <h3 class="card-text mb-0" id="athlete1_scoreboard_name_output"></h3>
+                                <h5><i id="athlete1_scoreboard_team_output"></i></h5>
+                            </div>
+                        </div>
+                        <h5 class="card-title me-3 text-end" id="athlete1_scoreboard_kata_output"></h5>
+                    </div>
+                    <div class="container" id="scoreboard_athlete2_output" style="display: none;">
+                        <div class="row g-0 align-items-center">
+                            <div class="col-md-4 me-2 hi-bgred text-center" id="athlete2_scoreboard_belt_output" style="width: 100px; height: 100px;">
+                                <h1 class="my-4" id="athlete2_scoreboard_total_output"></h1>
+                            </div>
+                            <div class="col-md-8">
+                                <h3 class="card-text mb-0" id="athlete2_scoreboard_name_output"></h3>
+                                <h5><i id="athlete2_scoreboard_team_output"></i></h5>
+                            </div>
+                        </div>
+                        <h5 class="card-title me-3 text-end" id="athlete2_scoreboard_kata_output"></h5>
+                    </div>
+                </div>
+                <div class="d-flex px-5 justify-content-center text-center">
+                    <table class="table table-dark table-borderless" id="athlete1_scoretable" style="display: table;">
+                        <tr>
+                            <th>I</th>
+                            <th>II</th>
+                            <th>III</th>
+                            <th>IV</th>
+                            <th>V</th>
+                        </tr>
+                        <tr>
+                            <th id="athlete1_score1_output"></th>
+                            <th id="athlete1_score2_output"></th>
+                            <th id="athlete1_score3_output"></th>
+                            <th id="athlete1_score4_output"></th>
+                            <th id="athlete1_score5_output"></th>
+                        </tr>
+                    </table>
+                    <table class="table table-dark table-borderless" id="athlete2_scoretable" style="display: none;">
+                        <tr>
+                            <th>I</th>
+                            <th>II</th>
+                            <th>III</th>
+                            <th>IV</th>
+                            <th>V</th>
+                        </tr>
+                        <tr>
+                            <th id="athlete2_score1_output"></th>
+                            <th id="athlete2_score2_output"></th>
+                            <th id="athlete2_score3_output"></th>
+                            <th id="athlete2_score4_output"></th>
+                            <th id="athlete2_score5_output"></th>
+                        </tr>
+                    </table>
+                </div>
+                <div class="card-footer" style="display: none;">
+                    <div class="col text-center" id="outputTimer">
+                        <h1 id="outputMinute" style="display: inline;">00</h1><h1 style="display: inline;">:</h1><h1 id="outputSecond" style="display: inline;">00</h1>.<h3 id="outputMilisecond" style="display: inline;">0</h3>
+                    </div>
+                </div>
+            </div>
+            <!-- Output Scoreboard Final -->
+            <div class="container" id="final_output" style="display: none;">
+                <div class="card-body pt-2">
+                <h5 class="card-title text-center">KEJUARAAN KARATE PELAJAR DAN MAHASISWA <br>"PIALA KAPOLRESTA SURAKARTA TAHUN 2024"</h5>
+                <h5 class="card-title text-center" id="kelas_final_output">KELAS -</h5>
+                <div class="row g-0 align-items-center">
+                    <div class="col-md-1 me-1 hi-bgred" id="athlete1_final_belt_output" style="width: 10px; height: 40px;"></div>
+                    <div class="col-md-10">
+                        <h6 class="card-text mb-0" id="athlete1_final_name_output"></h6>
+                        <small><i id="athlete1_final_team_output"></i></small>
+                    </div>
+                    <div class="col-md-1 text-end" id="athlete1_win_output" style="display: none;">
+                        <h6 class="card-text mb-0 hi-green" id="athlete1_blink">WIN</h6>
+                    </div>
+                </div>
+                <div class="d-flex px-5 justify-content-center text-center">
+                    <table class="table table-dark table-borderless" id="athlete1_finalscoretable" style="display: table;">
+                        <tr>
+                            <th id="athlete1_finalscore1_output"></th>
+                            <th id="athlete1_finalscore2_output"></th>
+                            <th id="athlete1_finalscore3_output"></th>
+                            <th id="athlete1_finalscore4_output"></th>
+                            <th id="athlete1_finalscore5_output"></th>
+                            <th class="text-end" id="athlete1_final_total_output"></th>
+                        </tr>
+                    </table>
+                </div>
+                <div class="row g-0 align-items-center mt-5">
+                    <div class="col-md-1 me-1 hi-bgred" id="athlete2_final_belt_output" style="width: 10px; height: 40px;"></div>
+                    <div class="col-md-10">
+                        <h6 class="card-text mb-0" id="athlete2_final_name_output"></h6>
+                        <small><i id="athlete2_final_team_output"></i></small>
+                    </div>
+                    <div class="col-md-1 text-end" id="athlete2_win_output" style="display: none;">
+                        <h6 class="card-text mb-0 hi-green" id="athlete2_blink">WIN</h6>
+                    </div>
+                </div>
+                <div class="d-flex px-5 justify-content-center text-center">
+                    <table class="table table-dark table-borderless" id="athlete2_finalscoretable" style="display: table;">
+                        <tr>
+                            <th id="athlete2_finalscore1_output"></th>
+                            <th id="athlete2_finalscore2_output"></th>
+                            <th id="athlete2_finalscore3_output"></th>
+                            <th id="athlete2_finalscore4_output"></th>
+                            <th id="athlete2_finalscore5_output"></th>
+                            <th class="text-end" id="athlete2_final_total_output"></th>
+                        </tr>
+                    </table>
+                </div>
+                </div>
+            </div>
+        </div>
+        <div class="mx-2 my-2" style="width: 720px; height: 360px;">
+            <h4 class="text-center">KATA SCOREBOARD</h4>
+            <div class="row my-2 form-inline">
+                <div class="col text-center">
+                    <button type="button" class="btn btn-primary btn-sm" onclick="list_input()" style="display: inline-block;">LIST ATLET</button>
+                    <button type="button" class="btn btn-primary btn-sm" onclick="scoreboard_input()" style="display: inline-block;">SCOREBOARD</button>
+                    <button type="button" class="btn btn-primary btn-sm" onclick="final_input()" style="display: inline-block;">SCOREBOARD FINAL</button>
+                </div>
+            </div>
+            <div class="row my-1" style="display: none;">
+                <div class="col-sm-12">
+                    <input type="text" placeholder="Judul Kejuaraan" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Judul Kejuaraan" value="KEJUARAAN KARATE PELAJAR & MAHASISWA SE-JAWA TENGAH PIALA KAPOLRESTA SURAKARTA TAHUN 2024" class="form-control form-control-sm" id="title_input" onchange="js_title()">
+                </div>
+            </div>
+            <hr>
+            <div class="row my-2 form-inline">
+                <div class="col-sm-8">
+                    <input type="text" placeholder="Nama Kelas" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Nama Kelas" value="KATA PERORANGAN SENIOR PUTRA ROUND I" class="form-control form-control-sm" id="kelas_input">
+                </div>
+                <div class="col-sm-1">
+                    <input type="text" placeholder="TATAMI" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Nomor Tatami" value="1" class="form-control form-control-sm" id="tatami_input">
+                </div>
+                <div class="col-sm-3">
+                    <button type="button" class="btn btn-success btn-sm" onclick="round_set()" style="display: inline-block;">SET</button>
+                    <button type="button" class="btn btn-secondary btn-sm" onclick="clear_list()" style="display: inline-block;margin-left: 20px;">CLEAR</button>
+                </div>
+            </div>
+            <!-- Atlet 1 -->
+            <div class="row form-inline my-1">
+                <div class="col-sm-2" style="width: 100px;">
+                    <button type="button" class="btn btn-success btn-sm" onclick="athlete1_add()" id="athlete1_add" style="display: inline-block;">+</button>
+                    <button type="button" class="btn btn-warning btn-sm" onclick="athlete1_remove()" id="athlete1_remove" style="display: none;">-</button>
+                    <button type="button" class="btn btn-danger btn-sm" onclick="athlete1_belt_aka()" id="athlete1_belt_aka" style="display: none;">AKA</button>
+                    <button type="button" class="btn btn-primary btn-sm" onclick="athlete1_belt_ao()" id="athlete1_belt_ao" style="display: none;">AO</button>
+                </div>
+                <div class="col-sm-4" style="width: 290px;">
+                    <input type="text" placeholder="Nama Atlet" value="" class="form-control form-control-sm" id="athlete1_name_input" style="display: none;">
+                </div>
+                <div class="col-sm-4">
+                    <input type="text" placeholder="Nama Tim" value="" class="form-control form-control-sm" id="athlete1_team_input" style="display: none;">
+                </div>
+                <div class="col-sm-2" style="width: 100px;">
+                    <input type="number" placeholder="Skor" value="" class="form-control form-control-sm" id="athlete1_score_input" style="display: none;">
+                </div>
+            </div>
+            <!-- Atlet 2 -->
+            <div class="row form-inline my-1">
+                <div class="col-sm-2" style="width: 100px;">
+                    <button type="button" class="btn btn-success btn-sm" onclick="athlete2_add()" id="athlete2_add" style="display: inline-block;">+</button>
+                    <button type="button" class="btn btn-warning btn-sm" onclick="athlete2_remove()" id="athlete2_remove" style="display: none;">-</button>
+                    <button type="button" class="btn btn-danger btn-sm" onclick="athlete2_belt_aka()" id="athlete2_belt_aka" style="display: none;">AKA</button>
+                    <button type="button" class="btn btn-primary btn-sm" onclick="athlete2_belt_ao()" id="athlete2_belt_ao" style="display: none;">AO</button>
+                </div>
+                <div class="col-sm-4" style="width: 290px;">
+                    <input type="text" placeholder="Nama Atlet" value="" class="form-control form-control-sm" id="athlete2_name_input" style="display: none;">
+                </div>
+                <div class="col-sm-4">
+                    <input type="text" placeholder="Nama Tim" value="" class="form-control form-control-sm" id="athlete2_team_input" style="display: none;">
+                </div>
+                <div class="col-sm-2" style="width: 100px;">
+                    <input type="number" placeholder="Skor" value="" class="form-control form-control-sm" id="athlete2_score_input" style="display: none;">
+                </div>
+            </div>
+            <!-- Atlet 3 -->
+            <div class="row form-inline my-1">
+                <div class="col-sm-2" style="width: 100px;">
+                    <button type="button" class="btn btn-success btn-sm" onclick="athlete3_add()" id="athlete3_add" style="display: inline-block;">+</button>
+                    <button type="button" class="btn btn-warning btn-sm" onclick="athlete3_remove()" id="athlete3_remove" style="display: none;">-</button>
+                    <button type="button" class="btn btn-danger btn-sm" onclick="athlete3_belt_aka()" id="athlete3_belt_aka" style="display: none;">AKA</button>
+                    <button type="button" class="btn btn-primary btn-sm" onclick="athlete3_belt_ao()" id="athlete3_belt_ao" style="display: none;">AO</button>
+                </div>
+                <div class="col-sm-4" style="width: 290px;">
+                    <input type="text" placeholder="Nama Atlet" value="" class="form-control form-control-sm" id="athlete3_name_input" style="display: none;">
+                </div>
+                <div class="col-sm-4">
+                    <input type="text" placeholder="Nama Tim" value="" class="form-control form-control-sm" id="athlete3_team_input" style="display: none;">
+                </div>
+                <div class="col-sm-2" style="width: 100px;">
+                    <input type="number" placeholder="Skor" value="" class="form-control form-control-sm" id="athlete3_score_input" style="display: none;">
+                </div>
+            </div>
+            <!-- Atlet 4 -->
+            <div class="row form-inline my-1">
+                <div class="col-sm-2" style="width: 100px;">
+                    <button type="button" class="btn btn-success btn-sm" onclick="athlete4_add()" id="athlete4_add" style="display: inline-block;">+</button>
+                    <button type="button" class="btn btn-warning btn-sm" onclick="athlete4_remove()" id="athlete4_remove" style="display: none;">-</button>
+                    <button type="button" class="btn btn-danger btn-sm" onclick="athlete4_belt_aka()" id="athlete4_belt_aka" style="display: none;">AKA</button>
+                    <button type="button" class="btn btn-primary btn-sm" onclick="athlete4_belt_ao()" id="athlete4_belt_ao" style="display: none;">AO</button>
+                </div>
+                <div class="col-sm-4" style="width: 290px;">
+                    <input type="text" placeholder="Nama Atlet" value="" class="form-control form-control-sm" id="athlete4_name_input" style="display: none;">
+                </div>
+                <div class="col-sm-4">
+                    <input type="text" placeholder="Nama Tim" value="" class="form-control form-control-sm" id="athlete4_team_input" style="display: none;">
+                </div>
+                <div class="col-sm-2" style="width: 100px;">
+                    <input type="number" placeholder="Skor" value="" class="form-control form-control-sm" id="athlete4_score_input" style="display: none;">
+                </div>
+            </div>
+            <!-- Atlet 5 -->
+            <div class="row form-inline my-1">
+                <div class="col-sm-2" style="width: 100px;">
+                    <button type="button" class="btn btn-success btn-sm" onclick="athlete5_add()" id="athlete5_add" style="display: inline-block;">+</button>
+                    <button type="button" class="btn btn-warning btn-sm" onclick="athlete5_remove()" id="athlete5_remove" style="display: none;">-</button>
+                    <button type="button" class="btn btn-danger btn-sm" onclick="athlete5_belt_aka()" id="athlete5_belt_aka" style="display: none;">AKA</button>
+                    <button type="button" class="btn btn-primary btn-sm" onclick="athlete5_belt_ao()" id="athlete5_belt_ao" style="display: none;">AO</button>
+                </div>
+                <div class="col-sm-4" style="width: 290px;">
+                    <input type="text" placeholder="Nama Atlet" value="" class="form-control form-control-sm" id="athlete5_name_input" style="display: none;">
+                </div>
+                <div class="col-sm-4">
+                    <input type="text" placeholder="Nama Tim" value="" class="form-control form-control-sm" id="athlete5_team_input" style="display: none;">
+                </div>
+                <div class="col-sm-2" style="width: 100px;">
+                    <input type="number" placeholder="Skor" value="" class="form-control form-control-sm" id="athlete5_score_input" style="display: none;">
+                </div>
+            </div>
+            <!-- Atlet 6 -->
+            <div class="row form-inline my-1">
+                <div class="col-sm-2" style="width: 100px;">
+                    <button type="button" class="btn btn-success btn-sm" onclick="athlete6_add()" id="athlete6_add" style="display: inline-block;">+</button>
+                    <button type="button" class="btn btn-warning btn-sm" onclick="athlete6_remove()" id="athlete6_remove" style="display: none;">-</button>
+                    <button type="button" class="btn btn-danger btn-sm" onclick="athlete6_belt_aka()" id="athlete6_belt_aka" style="display: none;">AKA</button>
+                    <button type="button" class="btn btn-primary btn-sm" onclick="athlete6_belt_ao()" id="athlete6_belt_ao" style="display: none;">AO</button>
+                </div>
+                <div class="col-sm-4" style="width: 290px;">
+                    <input type="text" placeholder="Nama Atlet" value="" class="form-control form-control-sm" id="athlete6_name_input" style="display: none;">
+                </div>
+                <div class="col-sm-4">
+                    <input type="text" placeholder="Nama Tim" value="" class="form-control form-control-sm" id="athlete6_team_input" style="display: none;">
+                </div>
+                <div class="col-sm-2" style="width: 100px;">
+                    <input type="number" placeholder="Skor" value="" class="form-control form-control-sm" id="athlete6_score_input" style="display: none;">
+                </div>
+            </div>
+            <!-- Atlet 7 -->
+            <div class="row form-inline my-1">
+                <div class="col-sm-2" style="width: 100px;">
+                    <button type="button" class="btn btn-success btn-sm" onclick="athlete7_add()" id="athlete7_add" style="display: inline-block;">+</button>
+                    <button type="button" class="btn btn-warning btn-sm" onclick="athlete7_remove()" id="athlete7_remove" style="display: none;">-</button>
+                    <button type="button" class="btn btn-danger btn-sm" onclick="athlete7_belt_aka()" id="athlete7_belt_aka" style="display: none;">AKA</button>
+                    <button type="button" class="btn btn-primary btn-sm" onclick="athlete7_belt_ao()" id="athlete7_belt_ao" style="display: none;">AO</button>
+                </div>
+                <div class="col-sm-4" style="width: 290px;">
+                    <input type="text" placeholder="Nama Atlet" value="" class="form-control form-control-sm" id="athlete7_name_input" style="display: none;">
+                </div>
+                <div class="col-sm-4">
+                    <input type="text" placeholder="Nama Tim" value="" class="form-control form-control-sm" id="athlete7_team_input" style="display: none;">
+                </div>
+                <div class="col-sm-2" style="width: 100px;">
+                    <input type="number" placeholder="Skor" value="" class="form-control form-control-sm" id="athlete7_score_input" style="display: none;">
+                </div>
+            </div>
+            <!-- Atlet 8 -->
+            <div class="row form-inline my-1">
+                <div class="col-sm-2" style="width: 100px;">
+                    <button type="button" class="btn btn-success btn-sm" onclick="athlete8_add()" id="athlete8_add" style="display: inline-block;">+</button>
+                    <button type="button" class="btn btn-warning btn-sm" onclick="athlete8_remove()" id="athlete8_remove" style="display: none;">-</button>
+                    <button type="button" class="btn btn-danger btn-sm" onclick="athlete8_belt_aka()" id="athlete8_belt_aka" style="display: none;">AKA</button>
+                    <button type="button" class="btn btn-primary btn-sm" onclick="athlete8_belt_ao()" id="athlete8_belt_ao" style="display: none;">AO</button>
+                </div>
+                <div class="col-sm-4" style="width: 290px;">
+                    <input type="text" placeholder="Nama Atlet" value="" class="form-control form-control-sm" id="athlete8_name_input" style="display: none;">
+                </div>
+                <div class="col-sm-4">
+                    <input type="text" placeholder="Nama Tim" value="" class="form-control form-control-sm" id="athlete8_team_input" style="display: none;">
+                </div>
+                <div class="col-sm-2" style="width: 100px;">
+                    <input type="number" placeholder="Skor" value="" class="form-control form-control-sm" id="athlete8_score_input" style="display: none;">
+                </div>
+            </div>
+            <hr>
+            <div class="row mb-2 form-inline">
+                <div class="col-sm-3">
+                    <button type="button" class="btn btn-outline-warning btn-sm" onclick="set_athlete1_scoreboard()" id="set_athlete1_scoreboard" style="display: inline-block;">1</button>
+                    <button type="button" class="btn btn-outline-warning btn-sm" onclick="set_athlete2_scoreboard()" id="set_athlete2_scoreboard" style="display: none;">2</button>
+                    <button type="button" class="btn btn-success btn-sm" onclick="set_scoreboard()" id="set_scoreboard" style="display: inline-block;">SET</button>
+                    <button type="button" class="btn btn-secondary btn-sm" onclick="clear_scoreboard()" id="clear_scoreboard" style="display: inline-block;">CLEAR</button>
+                    <button type="button" class="btn btn-secondary btn-sm" onclick="StopClock()" id="stopTime" style="display: none;">SKOR</button>
+                    <button type="button" class="btn btn-secondary btn-sm" onclick="StopClock()" id="stopTime" style="display: none;">TIME</button>
+                </div>
+                <div class="col-sm-9" style="display: none;">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <input id="inputMinute" min="0" type="number" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Menit Timer" value="3" class="form-control form-control-sm">
+                        </div>:
+                        <div class="col-sm-3">
+                            <input id="inputSecond" min="0"  type="number" max="60" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Detik Timer" value="00" class="form-control form-control-sm">
+                        </div>
+                        <div class="col-sm-4">
+                            <button type="button" class="btn btn-primary btn-sm" onclick="round_set()" style="display: inline-block;">SET</button>
+                            <button type="button" class="btn btn-success btn-sm" onclick="StartClock()" id="startTime" style="display: inline-block;">START</button>
+                            <button type="button" class="btn btn-warning btn-sm" onclick="PauseClock()" id="pauseTime" style="display: none;">PAUSE</button>
+                            <button type="button" class="btn btn-danger btn-sm" onclick="StopClock()" id="stopTime" style="display: inline-block;">STOP</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Form Atlet 1-->
+            <div class="row my-1 form-inline">
+                <div class="col-sm-1">
+                    <button type="button" class="btn btn-danger btn-sm" onclick="athlete1_scoreboard_belt_aka()" id="athlete1_scoreboard_belt_aka" style="display: block;">AKA</button>
+                    <button type="button" class="btn btn-primary btn-sm" onclick="athlete1_scoreboard_belt_ao()" id="athlete1_scoreboard_belt_ao" style="display: none;">AO</button>
+                </div>
+                <div class="col-sm-6">
+                    <input type="text" placeholder="Nama Atlet" value="" class="form-control form-control-sm" id="athlete1_scoreboard_name_input">
+                </div>
+                <div class="col-sm-5">
+                    <input type="text" placeholder="Nama Tim" value="" class="form-control form-control-sm" id="athlete1_scoreboard_team_input">
+                </div>
+            </div>
+            <div class="row my-1 form-inline">
+                <div class="col-sm-5">
+                    <input type="text" placeholder="Nama Kata" value="" class="form-control form-control-sm" id="athlete1_scoreboard_kata_input">
+                </div>
+                <div class="col-sm-1">
+                    <input type="text" placeholder="I" value="" class="form-control form-control-sm" id="athlete1_score1_input" onchange="athlete1_score1_input()">
+                </div>
+                <div class="col-sm-1">
+                    <input type="text" placeholder="II" value="" class="form-control form-control-sm" id="athlete1_score2_input" onchange="athlete1_score2_input()">
+                </div>
+                <div class="col-sm-1">
+                    <input type="text" placeholder="III" value="" class="form-control form-control-sm" id="athlete1_score3_input" onchange="athlete1_score3_input()">
+                </div>
+                <div class="col-sm-1">
+                    <input type="text" placeholder="IV" value="" class="form-control form-control-sm" id="athlete1_score4_input" onchange="athlete1_score4_input()">
+                </div>
+                <div class="col-sm-1">
+                    <input type="text" placeholder="V" value="" class="form-control form-control-sm" id="athlete1_score5_input" onchange="athlete1_score5_input()">
+                </div>
+                <div class="col-sm-2">
+                    <input type="number" disabled placeholder="Total" value="" class="form-control form-control-sm" id="athlete1_scoreboard_total">
+                </div>
+            </div>
+            <!-- Form Atlet 2 -->
+            <div class="row my-1 form-inline">
+                <div class="col-sm-1">
+                    <button type="button" class="btn btn-danger btn-sm" onclick="athlete2_scoreboard_belt_aka()" id="athlete2_scoreboard_belt_aka" style="display: block;">AKA</button>
+                    <button type="button" class="btn btn-primary btn-sm" onclick="athlete2_scoreboard_belt_ao()" id="athlete2_scoreboard_belt_ao" style="display: none;">AO</button>
+                </div>
+                <div class="col-sm-6">
+                    <input type="text" placeholder="Nama Atlet" value="" class="form-control form-control-sm" id="athlete2_scoreboard_name_input">
+                </div>
+                <div class="col-sm-5">
+                    <input type="text" placeholder="Nama Tim" value="" class="form-control form-control-sm" id="athlete2_scoreboard_team_input">
+                </div>
+            </div>
+            <div class="row my-1 form-inline">
+                <div class="col-sm-5">
+                    <input type="text" placeholder="Nama Kata" value="" class="form-control form-control-sm" id="athlete2_scoreboard_kata_input">
+                </div>
+                <div class="col-sm-1">
+                    <input type="text" placeholder="I" value="" class="form-control form-control-sm" id="athlete2_score1_input" onchange="athlete2_score1_input()">
+                </div>
+                <div class="col-sm-1">
+                    <input type="text" placeholder="II" value="" class="form-control form-control-sm" id="athlete2_score2_input" onchange="athlete2_score2_input()">
+                </div>
+                <div class="col-sm-1">
+                    <input type="text" placeholder="III" value="" class="form-control form-control-sm" id="athlete2_score3_input" onchange="athlete2_score3_input()">
+                </div>
+                <div class="col-sm-1">
+                    <input type="text" placeholder="IV" value="" class="form-control form-control-sm" id="athlete2_score4_input" onchange="athlete2_score4_input()">
+                </div>
+                <div class="col-sm-1">
+                    <input type="text" placeholder="V" value="" class="form-control form-control-sm" id="athlete2_score5_input" onchange="athlete2_score5_input()">
+                </div>
+                <div class="col-sm-2">
+                    <input type="number" disabled placeholder="Total" value="" class="form-control form-control-sm" id="athlete2_scoreboard_total">
+                </div>
+            </div>           
+        </div>
+    </div>
+    <div class="d-flex justify-content-start">
+        <div class="card" style="width: 675px; height: 360px;">
+            <p class="mx-2">
+                1. Tulis NAMA KEJUARAAN, NAMA KELAS yang ditandingkan, NOMOR TATAMI, dan JUMLAH ATLET yang bertanding di Kelas tsb. Klik SET GAME. <br> 2. Sebelum Kelas dimulai, isi Form Seluruh NAMA ATLET dan NAMA TIM. Klik SET GAME, dan klik LIST ATLET untuk menampilkan pada layar. <br>3. Sebelum Pertandingan dimulai, Klik SCOREBOARD, kemudian atur WAKTU PERTANDINGAN, SABUK, NAMA, TIM, dan KATA atlet yang akan bertanding. Klik START, PAUSE, dan STOP untuk mengatur Timer, Klik TAMPIL SKOR untuk menampilkan live score dan melakukan penilaian. Klik 1 / 2 untuk mengubah data atlet pada tampilan.
+                4. Untuk Pertandingan Final, penilaian dilakukan setelah kedua atlet bermain. Ketika pertandingan dimulai, atur 2 form data atlet sesuai poin 3. Ketika Penilaian, Klik SCOREBOARD FINAL, kemudian masukkan nilai-nilai dari juri.
+            </p>
+        </div>
+    </div>
+    <script src="js/kata-script.js"></script>
+</body>
+</html>
